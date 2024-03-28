@@ -1,239 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-header {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 30px 10%;
+@media (prefers-color-scheme: light) {
+    :root {
+        color: #213547;
+        background-color: #ffffff;
+    }
 }
 
-li {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 1.5rem;
-  /* color: #edf0f1; */
-  text-decoration: none;
-}
-
-.nav-items {
-  list-style: none;
-}
-
-.nav-items li {
-  display:inline-block;
-  padding: 0px 20px;
-}
-
-.nav-items li a {
-  font-weight: 500;
-  color: inherit;
-  text-decoration: none;
-}
-
-.nav-items li a:hover {
-  color: #535bf2;
-}
-
-.editor{
-  margin: 0 auto;
-  width:800px;
-}
-
-.editor-button {
-	background-color: inherit;
-	height: 50px;
-  	width:100%;
-}
-
-.control-buttons {
-  padding: 0px 0px;
-}
-
-.control-buttons li{
-  display:inline-block;
-  padding: 0px 20px;
-}
-
-.control-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 10px 20px;
-  font-size: 1rem;
-}
-
-.icon{
-  margin-right: 5px;
-}
-
-/* ---------------------  */
-.editor-container {
-  min-height: 600px;
-  margin: 20px auto;
-  border: 1px solid #333;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.editor-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 15px;
-  background-color: #353232;
-}
-
-.ids-info {
-  color: #aaa;
-  margin-left: 5px;
-}
-
-.metadata {
-  display: flex;
-  justify-content: space-around;
-  padding: 10px;
-  background-color: #333;
-}
-
-.metadata-item {
-  display: flex;
-  align-items: center;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: #333;
-  color: #aaa;
-}
-
-.icon--metadata {
-  color: #6a9fb5;
-}
-
-.metadata-value {
-  font-weight: 500;
-}
-
-.editor-body {
-  display: flex;
-  width: 100%;
-}
-
-.editor-gutter {
-  width: 50px;
-  min-height: 600px;
-  background-color: #333;
-  border-right: 1px solid #333;
-}
-
-.editor-content {
-  /* flex-grow: 1; */
-  padding: 10px;
-  outline: none;
-  font-family: inherit;
-  font-size: 14px;
-  line-height: 1.5;
-  overflow: auto;
-}
-
-/* ---------------------  */
-
-.section {
-  margin: 10px 0px 10px 30px;
-  padding: 10px;
-  text-align: left;
-}
-
-.requirement-name {
-	font-weight: bold;
-}
-
-.spec-contents, .applicables, .requirements {
-	margin-left: 30px;
-}
-
-.section h2 {
-  margin: 0px 0px 15px 0px;
-}
-
-.section h3 {
-	font-style: italic;
-	margin: 0px 0px 15px 30px;
-}
-.editable {
-	border-radius: 4px;
-	border: 1px solid transparent;
-}
-.editable:hover {
-	color: inherit;
-	border-color: #646cff;
-	background-color: #ffffff;
-  }
-
-.editable:focus {
-	background-color:#cad9e6;
-}
-
-.editable--description{
-	margin-top: 0px;
-}
-.editable--facet{
-	margin: 0px 0px 15px 30px;
-	display: inline-block;
-}
-
-.section-separator {
-  height: 2px;
-  background-color: #000000;
-  margin: 10px 0;
-}
-
-/* ---------------------  */
+/* --------------------- global --------------------- */
 body {
-  margin: 0;
-  /* display: flex;
-  place-items: center; */
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0;
+    /* display: flex;
+    place-items: center; */
+    min-width: 320px;
+    min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2rem;
-  line-height: 1.1;
+    font-size: 3.2rem;
+    line-height: 1.1;
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
 }
 
 .logo {
-  height: 8rem;
-  padding: 1.25rem;
-  margin-right: auto;
-  will-change: filter;
-  transition: filter 300ms;
+    height: 5rem;
+    padding: 1.25rem;
+    margin-right: auto;
+    will-change: filter;
+    transition: filter 300ms;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2rem #646cffaa);
+    filter: drop-shadow(0 0 2rem #646cffaa);
 }
+
 .logo.vanilla:hover {
-  filter: drop-shadow(0 0 2rem #f7df1eaa);
+    filter: drop-shadow(0 0 2rem #f7df1eaa);
 }
 
 .card {
@@ -241,41 +64,202 @@ h1 {
 }
 
 .read-the-docs {
-  color: #888;
+    color: #888;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 10px 20px;
-  font-size: 1.5rem;
-  font-family: inherit;
-  color: #ffffff;
-  background-color: #2b80c5;
-  cursor: pointer;
-  transition: border-color 0.25s;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: #ffffff;
+    background-color: #2b80c5;
+    cursor: pointer;
+    transition: border-color 0.25s;
 }
+
 button:hover {
-  color: inherit;
-  border-color: #646cff;
-  background-color: #ffffff;
+    color: inherit;
+    border-color: #646cff;
+    background-color: #ffffff;
 }
-/* button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-} */
+
 .hidden {
-  display: none;
+    display: none;
 }
-@media (prefers-color-scheme: light) {
-  :root {
-	color: #213547;
-	background-color: #ffffff;
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+li {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.nav-items {
+    list-style: none;
+}
+
+.nav-items li {
+    display:inline-block;
+    padding: 0px 20px;
+}
+
+.nav-items li a {
+    font-weight: 500;
+    color: inherit;
+    text-decoration: none;
+}
+
+.nav-items li a:hover {
+    color: #535bf2;
+}
+
+#start-button{
+    font-size: 1.25rem;
+}
+
+/* --------------------- editor --------------------- */
+
+.editor{
+    margin: 0 auto;
+    width:800px;
+}
+
+.editor-button {
+    background-color: inherit;
+    height: 50px;
+}
+
+.control-buttons {
+    padding: 0px 0px;
+}
+
+.control-buttons li{
+    display:inline-block;
+    padding: 0px 20px;
+}
+
+.control-button {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.icon{
+    margin-right: 5px;
+}
+
+.editor-container {
+    min-height: 600px;
+    margin: 20px auto;
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.editor-header {
+    text-align: left;
+    padding: 10px 15px;
+    background-color: #353232;
+}
+
+.ids-info {
+    color: #aaa;
+    margin-left: 5px;
+}
+
+.metadata {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #333;
+}
+
+.metadata-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #aaa;
+}
+
+.icon--metadata {
+    color: #6a9fb5;
+}
+
+.metadata-value {
+    font-weight: 500;
+}
+
+.editor-body {
+    display: flex;
+}
+
+.editor-gutter {
+    width: 50px;
+    min-height: 600px;
+    background-color: #333;
+    border-right: 1px solid #333;
+}
+
+/* ---------------------  */
+
+.section {
+    margin: 10px 0px 10px 30px;
+    padding: 10px;
+    text-align: left;
+}
+
+.requirement-name {
+    font-weight: bold;
+}
+
+.spec-contents, .applicables, .requirements {
+    margin-left: 30px;
+}
+
+.section h2 {
+    margin: 0px 0px 15px 0px;
+}
+
+.section h3 {
+    font-style: italic;
+    margin: 0px 0px 15px 30px;
+}
+.editable {
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+.editable:hover {
+    color: inherit;
+    border-color: #646cff;
+    background-color: #ffffff;
   }
-  /* a:hover {
-	color: #747bff;
-  } */
-  /* button {
-	background-color: #f9f9f9;
-  } */
+
+.editable:focus {
+    background-color:#cad9e6;
 }
+
+.editable--description{
+    margin-top: 0px;
+}
+.editable--facet{
+    margin: 0px 0px 15px 30px;
+    display: inline-block;
+}
+
+.section-separator {
+    height: 2px;
+    background-color: #000000;
+    margin: 10px 0;
+}
+
+/* ---------------------  ---------------------*/

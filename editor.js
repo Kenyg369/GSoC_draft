@@ -25,7 +25,7 @@ export function setupEditor(element) {
                       </div>
                       <div class="metadata-item">
                         <i class="fas fa-calendar-alt icon icon--metadata"></i>
-                        <span class="metadata-value">May 1, 2023</span>
+                        <span class="metadata-value">April 1, 2024</span>
                       </div>
                       <div class="metadata-item">
                         <i class="fas fa-flag icon icon--metadata"></i>
@@ -65,10 +65,10 @@ export function setupEditor(element) {
             </div>
           `;
 
-		setUpEditorBar();
+		setUpEditorSideBar();
 	});
 
-	function setUpEditorBar() {
+	function setUpEditorSideBar() {
 		// Function to update editor body height
 		function updateEditorHeight() {
 			const sections = document.querySelectorAll(".section");
@@ -84,29 +84,31 @@ export function setupEditor(element) {
 		const removeSectionBtn = document.querySelector(".remove-section");
 		const editorContent = document.querySelector(".sections");
 
+		// Function to add a new requirement
 		function addSection() {
 			const newSection = document.createElement("div");
 			newSection.classList.add("section");
 			newSection.innerHTML = `
-          <div class="section-separator"></div>
-          <h2 class="">Requirement name:</h2>
-          <div class="spec-contents">
-              <p class="editable editable--description" contenteditable>Describe why the requirement is important to the project.</p>
-              <p class="editable editable--description" contenteditable>Provide instructions on who is responsible and how to achieve it.</p>
-          </div>
-          <h3>APPLIES TO:</h3>
-          <div class="applicables">
-              <span class="editable editable--facet" contenteditable>xxxxxxxxxxxxx</span>
-          </div>
-          <h3>REQUIREMENTS:</h3>
-          <div class="requirements">
-              <span class="editable editable--facet" contenteditable>yyyyyyyyyyyyy</span>
-          </div>
-        `;
+                <div class="section-separator"></div>
+                <h2 class="">Requirement name:</h2>
+                <div class="spec-contents">
+                    <p class="editable editable--description" contenteditable>Describe why the requirement is important to the project.</p>
+                    <p class="editable editable--description" contenteditable>Provide instructions on who is responsible and how to achieve it.</p>
+                </div>
+                <h3>APPLIES TO:</h3>
+                <div class="applicables">
+                    <span class="editable editable--facet" contenteditable>xxxxxxxxxxxxx</span>
+                </div>
+                <h3>REQUIREMENTS:</h3>
+                <div class="requirements">
+                    <span class="editable editable--facet" contenteditable>yyyyyyyyyyyyy</span>
+                </div>
+            `;
 			editorContent.appendChild(newSection);
 			updateEditorHeight(); // Update editor height when a section is added
 		}
 
+		// Function to remove the last requirement
 		function removeSection() {
 			const sections = editorContent.querySelectorAll(".section");
 			if (sections.length > 1) {

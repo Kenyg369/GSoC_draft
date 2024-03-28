@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
 
+/* --------------------- global --------------------- */
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -22,11 +23,8 @@
     }
 }
 
-/* --------------------- global --------------------- */
 body {
     margin: 0;
-    /* display: flex;
-    place-items: center; */
     min-width: 320px;
     min-height: 100vh;
 }
@@ -41,30 +39,6 @@ h1 {
     margin: 0 auto;
     padding: 2rem;
     text-align: center;
-}
-
-.logo {
-    height: 5rem;
-    padding: 1.25rem;
-    margin-right: auto;
-    will-change: filter;
-    transition: filter 300ms;
-}
-
-.logo:hover {
-    filter: drop-shadow(0 0 2rem #646cffaa);
-}
-
-.logo.vanilla:hover {
-    filter: drop-shadow(0 0 2rem #f7df1eaa);
-}
-
-.card {
-  padding: 2rem;
-}
-
-.read-the-docs {
-    color: #888;
 }
 
 button {
@@ -85,9 +59,7 @@ button:hover {
     background-color: #ffffff;
 }
 
-.hidden {
-    display: none;
-}
+/* --------------------- header --------------------- */
 
 header {
     display: flex;
@@ -96,68 +68,105 @@ header {
     padding: 30px 10%;
 }
 
-li {
+.header__logo {
+    height: 5rem;
+    padding: 1.25rem;
+    margin-right: auto;
+    will-change: filter;
+    transition: filter 300ms;
+}
+  
+.header__logo:hover {
+    filter: drop-shadow(0 0 2rem #646cffaa);
+}
+
+.header__nav-items {
+    list-style: none;
+}
+
+.header__nav-items li {
+    display: inline-block;
+    padding: 0 20px;
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 1rem;
 }
-
-.nav-items {
-    list-style: none;
-}
-
-.nav-items li {
-    display:inline-block;
-    padding: 0px 20px;
-}
-
-.nav-items li a {
+  
+.header__nav-items li a {
     font-weight: 500;
     color: inherit;
     text-decoration: none;
 }
-
-.nav-items li a:hover {
+  
+.header__nav-items li a:hover {
     color: #535bf2;
+} 
+  
+/* --------------------- Entry ---------------------- */
+.entry__logo {
+    height: 5rem;
+    padding: 1.25rem;
+    margin-right: auto;
+    will-change: filter;
+    transition: filter 300ms;
+}
+
+.entry__logo:hover {
+    filter: drop-shadow(0 0 2rem #090f72aa);
+}
+  
+.entry__logo--vanilla:hover {
+    filter: drop-shadow(0 0 2rem #f7df1eaa);
+}
+
+.entry__card {
+    padding: 2rem;
+}
+  
+.entry__read-the-docs {
+    color: #888;
 }
 
 #start-button{
-    font-size: 1.25rem;
+    font-size: 2rem;
 }
 
-/* --------------------- editor --------------------- */
+.hidden {
+    display: none;
+}
+
+/* --------------------- Editor --------------------- */
 
 .editor{
     margin: 0 auto;
     width:800px;
 }
 
-.editor-button {
-    background-color: inherit;
-    height: 50px;
+.editor__nav {
+    padding: 0;
 }
 
-.control-buttons {
+.editor__control-buttons {
     padding: 0px 0px;
 }
 
-.control-buttons li{
+.editor__control-buttons li{
     display:inline-block;
     padding: 0px 20px;
 }
 
-.control-button {
+.editor__control-button {
     border-radius: 8px;
     border: 1px solid transparent;
     padding: 10px 20px;
     font-size: 1rem;
 }
 
-.icon{
+.editor__icon{
     margin-right: 5px;
 }
 
-.editor-container {
+.editor__container {
     min-height: 600px;
     margin: 20px auto;
     border: 1px solid #333;
@@ -165,25 +174,25 @@ li {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-.editor-header {
+.editor__header {
     text-align: left;
     padding: 10px 15px;
     background-color: #353232;
 }
 
-.ids-info {
+.editor__ids-info {
     color: #aaa;
     margin-left: 5px;
 }
 
-.metadata {
+.editor__metadata {
     display: flex;
     justify-content: space-around;
     padding: 10px;
     background-color: #333;
 }
 
-.metadata-item {
+.editor__metadata-item {
     display: flex;
     align-items: center;
     padding: 5px 10px;
@@ -191,35 +200,36 @@ li {
     color: #aaa;
 }
 
-.icon--metadata {
+.editor__icon--metadata {
     color: #6a9fb5;
 }
 
-.metadata-value {
+.editor__metadata-value {
     font-weight: 500;
 }
 
-.editor-body {
+.editor__body {
     display: flex;
 }
 
-.editor-gutter {
+.editor__gutter {
     width: 50px;
     min-height: 600px;
     background-color: #333;
     border-right: 1px solid #333;
 }
 
-/* ---------------------  */
+.editor__button {
+    background-color: inherit;
+    height: 50px;
+}
+
+/* --------------- Requirement Section -------------- */
 
 .section {
     margin: 10px 0px 10px 30px;
     padding: 10px;
     text-align: left;
-}
-
-.requirement-name {
-    font-weight: bold;
 }
 
 .spec-contents, .applicables, .requirements {
@@ -234,32 +244,35 @@ li {
     font-style: italic;
     margin: 0px 0px 15px 30px;
 }
-.editable {
+
+.section__editable {
     border-radius: 4px;
     border: 1px solid transparent;
 }
-.editable:hover {
+
+.section__editable:hover {
     color: inherit;
     border-color: #646cff;
     background-color: #ffffff;
-  }
+}
 
-.editable:focus {
+.section__editable:focus {
     background-color:#cad9e6;
 }
 
-.editable--description{
+.description{
     margin-top: 0px;
 }
-.editable--facet{
+
+.facet{
     margin: 0px 0px 15px 30px;
     display: inline-block;
 }
 
-.section-separator {
+.section__separator {
     height: 2px;
     background-color: #000000;
     margin: 10px 0;
 }
 
-/* ---------------------  ---------------------*/
+/* ------------------------ ------------------------- */

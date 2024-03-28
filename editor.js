@@ -1,10 +1,10 @@
 export function setupEditor(element) {
-    const sectionToHide = document.getElementById("entry");
-    const editorBody = document.querySelector(".editor");
+	const sectionToHide = document.getElementById("entry");
+	const editorBody = document.querySelector(".editor");
 
-    element.addEventListener("click", () => {
-        sectionToHide.classList.toggle("hidden");
-        document.querySelector("#app").innerHTML = `
+	element.addEventListener("click", () => {
+		sectionToHide.classList.toggle("hidden");
+		document.querySelector("#app").innerHTML = `
             <div class="editor">			
                 <nav> 
                     <ul class="control-buttons">
@@ -65,29 +65,29 @@ export function setupEditor(element) {
             </div>
           `;
 
-        setUpEditorBar();
-    });
+		setUpEditorBar();
+	});
 
-    function setUpEditorBar() {
-        // Function to update editor body height
-        function updateEditorHeight() {
-            const sections = document.querySelectorAll(".section");
-            let totalHeight = 0;
-            sections.forEach((section) => {
-                totalHeight += section.offsetHeight; // Add the height of each section
-            });
-            // Set the height of the editor body
-            editorBody.style.height = totalHeight + "px";
-        }
+	function setUpEditorBar() {
+		// Function to update editor body height
+		function updateEditorHeight() {
+			const sections = document.querySelectorAll(".section");
+			let totalHeight = 0;
+			sections.forEach((section) => {
+				totalHeight += section.offsetHeight; // Add the height of each section
+			});
+			// Set the height of the editor body
+			editorBody.style.height = totalHeight + "px";
+		}
 
-        const addSectionBtn = document.querySelector(".add-section");
-        const removeSectionBtn = document.querySelector(".remove-section");
-        const editorContent = document.querySelector(".sections");
+		const addSectionBtn = document.querySelector(".add-section");
+		const removeSectionBtn = document.querySelector(".remove-section");
+		const editorContent = document.querySelector(".sections");
 
-        function addSection() {
-            const newSection = document.createElement("div");
-            newSection.classList.add("section");
-            newSection.innerHTML = `
+		function addSection() {
+			const newSection = document.createElement("div");
+			newSection.classList.add("section");
+			newSection.innerHTML = `
           <div class="section-separator"></div>
           <h2 class="">Requirement name:</h2>
           <div class="spec-contents">
@@ -103,19 +103,19 @@ export function setupEditor(element) {
               <span class="editable editable--facet" contenteditable>yyyyyyyyyyyyy</span>
           </div>
         `;
-            editorContent.appendChild(newSection);
-            updateEditorHeight(); // Update editor height when a section is added
-        }
+			editorContent.appendChild(newSection);
+			updateEditorHeight(); // Update editor height when a section is added
+		}
 
-        function removeSection() {
-            const sections = editorContent.querySelectorAll(".section");
-            if (sections.length > 1) {
-                editorContent.removeChild(sections[sections.length - 1]);
-                updateEditorHeight(); // Update editor height when a section is removed
-            }
-        }
+		function removeSection() {
+			const sections = editorContent.querySelectorAll(".section");
+			if (sections.length > 1) {
+				editorContent.removeChild(sections[sections.length - 1]);
+				updateEditorHeight(); // Update editor height when a section is removed
+			}
+		}
 
-        addSectionBtn.addEventListener("click", addSection);
-        removeSectionBtn.addEventListener("click", removeSection);
-    }
+		addSectionBtn.addEventListener("click", addSection);
+		removeSectionBtn.addEventListener("click", removeSection);
+	}
 }

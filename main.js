@@ -1,6 +1,6 @@
 import "./style.css";
-import javascriptLogo from "./javascript.svg";
-import viteLogo from "/vite.svg";
+import javascriptLogo from "./public/javascript.svg";
+import viteLogo from "./public/vite.svg";
 import { setupEditor } from "./editor.js";
 
 document.querySelector("#entry").innerHTML = `

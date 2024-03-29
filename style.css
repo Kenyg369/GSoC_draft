@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
 
-/* --------------------- global --------------------- */
+/* --------------------- Global --------------------- */
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -59,7 +59,7 @@ button:hover {
     background-color: #ffffff;
 }
 
-/* --------------------- header --------------------- */
+/* --------------------- Header --------------------- */
 
 header {
     display: flex;
@@ -222,6 +222,7 @@ header {
 .editor__button {
     background-color: inherit;
     height: 50px;
+    width: 100%;
 }
 
 /* --------------- Requirement Section -------------- */
